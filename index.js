@@ -52,7 +52,7 @@ const extractJSON = () => {
     serial: readings[0].serial,
     readings: readings.map(({ mprn, serial, value, readType, date }) => ({
       value: parseFloat(value),
-      date: new Date(date),
+      date,
     }))
   }
   fs.writeFileSync(`${downloadPath}/data.json`, JSON.stringify(result));
