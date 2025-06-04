@@ -5,6 +5,9 @@ updates:
   directory: "/"
   schedule:
     interval: daily
+  ignore:
+    - dependency-name: "*"
+      update-types: ["version-update:semver-major"]
   commit-message:
     prefix: "npm"
     include: "scope"
@@ -13,9 +16,6 @@ updates:
       update-types:
         - minor
         - patch
-    dependencies-major:
-      update-types:
-        - major
   open-pull-requests-limit: 20
   reviewers:
   - fabrice404
